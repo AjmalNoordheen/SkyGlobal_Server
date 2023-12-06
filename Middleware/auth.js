@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const generateToken = (data) => {
   try {
-    const secretKey = "t9rXw5bF2mS7zQ8p";
+     const secretKey = "t9rXw5bF2mS7zQ8p";
 
     const token = jwt.sign(
       { email: data.email, name: data.name, role: "user" },

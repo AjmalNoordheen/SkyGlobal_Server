@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const router = require("./Routes/baseRouter");
+const env = require('dotenv').config()
 
 const app = express();
 
@@ -10,7 +11,7 @@ app.use(express.json());
 app.use("/", router);
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/skyGoal")
+  .connect(process.env.MONGOBD_CONNECTION)
   .then((res) => {
     console.log("DB Connected");
   })
@@ -18,6 +19,6 @@ mongoose
     console.log(err, "DB ERROR");
   });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("server started successfully");
 });
