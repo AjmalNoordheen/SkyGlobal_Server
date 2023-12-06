@@ -7,11 +7,12 @@ const env = require('dotenv').config()
 const app = express();
 
 const corsOptions = {
-  origin: 'https://shiny-pika-86e0df.netlify.app', // replace with your frontend's origin
+  origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
 };
+
 
 // Enable CORS with specific options
 app.use(cors(corsOptions));
