@@ -7,7 +7,7 @@ const env = require('dotenv').config()
 const app = express();
 
 const corsOptions = {
-  origin: 'http://example.com', // replace with your frontend's origin
+  origin: 'http://localhost:5173', // replace with your frontend's origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // enable set cookie
   optionsSuccessStatus: 204,
