@@ -6,7 +6,15 @@ const env = require('dotenv').config()
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'http://example.com', // replace with your frontend's origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // enable set cookie
+  optionsSuccessStatus: 204,
+};
+
+// Enable CORS with specific options
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/", router);
 
